@@ -25,7 +25,7 @@ The basic workflow is
 3. Run a cross-validation test to find the best estimation parameter (`xvalidate`).
 4. Estimatie the PRC with the found parameter (`csprc.evaluate`).
 
-Take a look at the example, `hh_estimation_demo.m`, which shows the workflow in more detail.
+Take a look at the example, `demo_estimation_HH.m`, which shows the workflow in more detail.
 
 
 
