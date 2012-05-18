@@ -1,0 +1,56 @@
+load_file("nrngui.hoc")
+
+create soma
+access soma
+
+soma.nseg = 1
+soma.L = 20		// (um)       
+soma.diam = 50/PI	// (um)
+
+insert hh
+
+sec = 1000
+min = 60*sec
+tstop = 0.15 * min
+steps_per_ms = 20
+Dt = 1/steps_per_ms
+sim_len = tstop*steps_per_ms
+
+objref I
+I = new IClamp(0.5)
+I.del = 0
+I.dur = tstop
+
+objref r
+r = new Random( 201 )
+r.normal( 0.08395 , 0.000196 )
+
+objref stim, vtrace
+stim = new Vector(sim_len)
+vtrace = new Vector(sim_len)
+for i = 1, sim_len stim.x[i-1] = r.repick()
+
+stim.play(&I.amp,Dt)
+vtrace.record(&soma.v(0.5),Dt)
+
+xopen("sta.ses")
+init()
+run()
+
+load_file("process.hoc")
+
+
+objref f
+
+f = new File()
+f.wopen( "stim_201.bin" )
+//f.printf("Mean Variance NSpikes meanISI")
+stim.fwrite(f)
+f.flush()
+f.close()
+
+f.wopen( "v_201.bin" )
+vtrace.fwrite(f)
+f.flush()
+f.close()
+quit()
