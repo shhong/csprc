@@ -1,5 +1,5 @@
 ## CSPRC: Efficient Estimator of Phase Response Curve via Compressive Sensing
-CSPRC is a MATLAB toolbox for estimating the infinitesimal phase response curve (PRC) by using Compressive Sensing (CS) algorithms. For more information about the methodology, please check out our paper in Reference.
+CSPRC is a MATLAB toolbox for estimating the infinitesimal phase response curve (PRC) by using Compressive Sensing (CS) algorithms. For more information about the methodology, please check out our paper in Reference. This software is licensed under GPL 3.0 License.
 
 
 ### Dependencies
