@@ -6,7 +6,6 @@ access soma
 soma.nseg = 1
 soma.L = 20		// (um)       
 soma.diam = 50/PI	// (um)
-//soma.cm = 2       // (uF/cm2)
 
 insert hh
 
