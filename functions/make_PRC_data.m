@@ -70,8 +70,8 @@ for i=1:Nseg
         scut = stim(spiketime(i):spiketime(i+1));
         vcut =    v(spiketime(i):spiketime(i+1));
         torig = linspace(0,1,numel(scut));
-        nstim(k,:)  = stretch(scut, D);%, numel(scut)); %interp1(torig,scut,tt, 'pchip');
-        ntrace(k,:) = stretch(vcut, D);%, numel(scut)); %interp1(torig,vcut,tt, 'pchip');
+        nstim(k,:)  = stretch(scut, D); % resample(scut, D, numel(scut)); %interp1(torig,scut,tt, 'pchip');
+        ntrace(k,:) = stretch(vcut, D); % resample(scut, D, numel(scut)); %interp1(torig,vcut,tt, 'pchip');
         k = k+1;
     end
 end
