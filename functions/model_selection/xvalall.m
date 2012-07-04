@@ -33,8 +33,9 @@ etas = etas_;
 
 xvvals = zeros(Netas,Nfilts);
 
-disp(['Total number of (train, test) pairs = ' num2str(Nfilts) '.'])
-disp(['Each train set contains ' num2str(sum(~filts(:,1))) ' isis.'])
+disp(['Total number of (train, test) pairs = ' num2str(Nfilts) '.']);
+disp(['Each train set contains ' num2str(sum(~filts(:,1)))...
+      ' isis out of ' num2str(size(prcdata.nstim,1)) '.']);
 
 h = waitbar(0,'Test is starting...');
 for j=1:Nfilts
