@@ -18,15 +18,17 @@ function new_data = subselect_data(data,N)
 % Email: shhong@oist.jp
 %
 
+new_data = data;
+
 if length(N)>1
     ind = N;
+	new_data.N = N;
 else
     ind = randperm(data.N);
     ind = ind(1:N);
+	new_data.N = numel(ind);
 end
 
-new_data = data;
-new_data.N = N;
 new_data.y = data.y(ind,:);
 new_data.nstim = data.nstim(ind,:);
 new_data.ntrace = data.ntrace(ind,:);
