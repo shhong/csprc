@@ -22,11 +22,11 @@ new_data = data;
 
 if length(N)>1
     ind = N;
-	new_data.N = N;
+    new_data.N = numel(ind);
 else
     ind = randperm(data.N);
     ind = ind(1:N);
-	new_data.N = numel(ind);
+    new_data.N = N;
 end
 
 new_data.y = data.y(ind,:);
