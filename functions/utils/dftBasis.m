@@ -1,6 +1,6 @@
 function basis = dftBasis(L_, M)
 % u = dftBasis(L, N) generates the (NxL) Fourier basis matrix u where L is the
-% length of each basis vector. If M is not specified, M = (L-1)/2.
+% length of each basis vector. If M is not specified, N = (L-1)/2.
 %
 %
 % Written by: Sungho Hong, CNS Unit, Okinawa Inst of Sci Tech
