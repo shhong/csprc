@@ -1,8 +1,6 @@
-function filts = Kfold(N_,k,kp_)
-% filters = Kfold(N, k, kp) returns the kp selection filters given
-% data size N and number of folds k. The filters will be used for the 
-% K-fold cross-validation (see Hastie et al. Elements of Statistical
-% Learning, 2009).
+function filts = Kfold_rand(N_,k,kp_)
+% filters = Kfold_rand(N, k, kp) works exactly the same as Kfold but the
+% rows are randomized.
 %
 % Inputs
 % ======
@@ -32,6 +30,6 @@ for i=1:kp
     ind = ((i-1)*Nlines+1):(i*Nlines);
     filts(ind,i) = true;
 end
-%randind = randperm(k);
-%filts = filts(:,randind(1:kp));
+randind = randperm(N);
+filts = filts(randind,:);
 end
