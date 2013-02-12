@@ -1,4 +1,4 @@
-function [acc ret] = running_stat()
+function r = running_stat()
 
 m = 0;
 s = 0;
@@ -20,8 +20,7 @@ k = 0;
         end
         k1 = k;
     end
-
-acc = @accumulator;
-ret = @accessor;
+    
+r = struct('acc', @accumulator, 'ret', @accessor);
 
 end
